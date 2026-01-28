@@ -11,7 +11,6 @@ A private, in-session reading assistant for user-uploaded book page images. Extr
 ## Features
 
 - 📷 **Upload Page Images** - Upload up to 15 book pages (JPG/PNG)
-- ✂️ **Image Cropping** - Select specific text areas before OCR processing
 - 📝 **OCR Text Extraction** - Extract English text using Tesseract
 - ✨ **AI Text Correction** - Post-OCR correction used to fix common scanning errors
 - 🔤 **Telugu Translation** - Translate while preserving proper nouns
@@ -23,7 +22,7 @@ A private, in-session reading assistant for user-uploaded book page images. Extr
 
 | Component | Technology |
 |-----------|------------|
-| Frontend | Next.js 15, React, TypeScript, Tailwind CSS, react-image-crop |
+| Frontend | Next.js 15, React, TypeScript, Tailwind CSS |
 | Backend | Python 3.11+, FastAPI |
 | OCR | pytesseract + Tesseract-OCR |
 | Translation & AI | OpenAI API (GPT-4o-mini) for Correction & Translation |
@@ -117,7 +116,6 @@ AI Reading Companion/
     │   │   └── layout.tsx   # Root layout
     │   ├── components/
     │   │   ├── ImageUploader.tsx
-    │   │   ├── ImageCropper.tsx
     │   │   ├── ReaderView.tsx
     │   │   ├── TranslationPanel.tsx
     │   │   ├── AudioPlayer.tsx
