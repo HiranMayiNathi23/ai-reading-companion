@@ -1,0 +1,115 @@
+/* Import Google Fonts first - must be before other imports */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;500;600&display=swap');
+
+@import "tailwindcss";
+
+/* Base styles - Dark mode by default */
+:root {
+  --foreground: #ededed;
+  --background: #0a0a0a;
+}
+
+/* Light mode */
+:root:not(.dark) {
+  --foreground: #1a1a1a;
+  --background: #f8f9fa;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html.dark body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+html:not(.dark) body {
+  background: #f0f4f8;
+  color: #1a1a1a;
+}
+
+/* Light mode overrides for main container */
+html:not(.dark) main {
+  background: linear-gradient(135deg, #e0e7ff 0%, #f0f4f8 50%, #e0e7ff 100%) !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Animations */
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.delay-1000 {
+  animation-delay: 1s;
+}
+
+/* Telugu font support */
+.telugu-text {
+  font-family: 'Noto Sans Telugu', sans-serif;
+}
+
+/* Prose customizations for reader view */
+.prose {
+  max-width: none;
+}
+
+.prose p {
+  margin-bottom: 1em;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Prevent text selection on buttons */
+button {
+  user-select: none;
+}
+
+/* Focus styles */
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+}
